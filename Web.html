@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TKJ 2 SMK KARYA BANGSA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+        body {
+            background-color: #000;
+            color: #ff0000;
+            font-family: 'Creepster', cursive;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://i.imgur.com/RL4Bd3C.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #loginForm, #pantunBox {
+            background-color: rgba(10, 10, 10, 0.85);
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 25px red;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, button {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid red;
+            background-color: #111;
+            color: #ff0000;
+            text-align: center;
+        }
+        input::placeholder {
+            color: #880000;
+        }
+        button {
+            background-color: #660000;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #990000;
+        }
+        .error {
+            color: crimson;
+            font-weight: bold;
+        }
+        #pantunBox {
+            display: none;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loginForm">
+        <h2>Kelas Kikir TKJ2</h2>
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Masukkan username..." />
+            <input type="password" id="password" placeholder="Masukkan password..." />
+        </div>
+        <div class="error" id="errorMsg"></div>
+        <button onclick="submitForm()">MASUK</button>
+    </div>
+
+    <div id="pantunBox">
+        <h2>PESAN NEGARA</h2>
+        <p style="font-size: 22px;">Tristan Gay harus di bakar 💀</p>
+    </div>
+
+    <script>
+        function submitForm() {
+            const user = document.getElementById("username").value.trim();
+            const pw = document.getElementById("password").value;
+            const err = document.getElementById("errorMsg");
+
+            if ((user === "Tristan" && pw === "ahiahi") || (user === "Panji" && pw === "anj")) {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("pantunBox").style.display = "block";
+            } else {
+                err.textContent = "IDENTITAS SALAH... PINJAM 100K";
+            }
+        }
+    </script>
+
+</body>
+</html>
